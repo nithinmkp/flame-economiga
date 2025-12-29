@@ -1,0 +1,19 @@
+---
+title: "What Grad Schools Don’t Teach You"
+subtitle: Tools for Transparant and Reproducible Research
+author: 
+  - name: Nithin M
+    institute: Kerala agricultural University   
+  - name : Naveen Hari
+format:
+  metropolis-revealjs:
+    theme: [styles.scss]
+    slide-number: true
+    chalkboard: true
+    highlight-style: dracula
+    multiplex: false
+    preview-links: true
+    controls: true
+    footer: " https://nithinmkp.github.io/ysi-economiga/"
+brand: false
+---

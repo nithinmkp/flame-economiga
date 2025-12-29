@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "Prerequisites\n\nIntro to R or Python programming\n\n\n\nIntsructor\nNithin M\nAssistant Professor, Department of Development Economics\nKerala Agricultural University\n\n\nSessions\n\n\nUnlocking the Web: Data Scraping Techniques\n\n\nTime Series Analysis: Methods for Real-World Forecasting\n\n\n\n\nMaterials\nCheck out this GitHub repo"
+  },
+  {
+    "objectID": "day2/index.html",
+    "href": "day2/index.html",
+    "title": "Time Series Analysis: Methods for Real-World Forecasting",
+    "section": "",
+    "text": "You can view the slides below or open them in a new tab."
+  },
+  {
+    "objectID": "day1/index.html",
+    "href": "day1/index.html",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "",
+    "text": "from bs4 import BeautifulSoup # pip install bs4\nimport requests # pip install requests\nimport re\nimport polars as pl # pip install polars\n\n\n\n\n\nlibrary(datapasta)  # install.packages(\"datapasta\")\nlibrary(rvest)      # install.packages(\"rvest\")\nlibrary(httr)      # install.packages(\"httr\")\nlibrary(dplyr)     # install.packassges(\"dplyr\")\nlibrary(stringr)   # install.packages(\"stringr\")\n\n\n\n\n\nVS Code or RStudio\n\n\n\n\nThe demo html file is available here in the github repo.\nYou can view the slides below or open them in a new tab."
+  },
+  {
+    "objectID": "day1/index.html#python",
+    "href": "day1/index.html#python",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "",
+    "text": "from bs4 import BeautifulSoup # pip install bs4\nimport requests # pip install requests\nimport re\nimport polars as pl # pip install polars"
+  },
+  {
+    "objectID": "day1/index.html#r",
+    "href": "day1/index.html#r",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "",
+    "text": "library(datapasta)  # install.packages(\"datapasta\")\nlibrary(rvest)      # install.packages(\"rvest\")\nlibrary(httr)      # install.packages(\"httr\")\nlibrary(dplyr)     # install.packassges(\"dplyr\")\nlibrary(stringr)   # install.packages(\"stringr\")"
+  },
+  {
+    "objectID": "day1/index.html#ide",
+    "href": "day1/index.html#ide",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "",
+    "text": "VS Code or RStudio"
+  },
+  {
+    "objectID": "day1/web_scrap.html#datapasta",
+    "href": "day1/web_scrap.html#datapasta",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "datapasta",
+    "text": "datapasta"
+  },
+  {
+    "objectID": "day1/web_scrap.html#html-structure-the-basics",
+    "href": "day1/web_scrap.html#html-structure-the-basics",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "HTML Structure: The Basics",
+    "text": "HTML Structure: The Basics"
+  },
+  {
+    "objectID": "day1/web_scrap.html#python---beautiful-soup",
+    "href": "day1/web_scrap.html#python---beautiful-soup",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "Python - Beautiful Soup",
+    "text": "Python - Beautiful Soup"
+  },
+  {
+    "objectID": "Slides/index.html",
+    "href": "Slides/index.html",
+    "title": "Slides",
+    "section": "",
+    "text": "You can view the slides below or open them in a new tab."
+  },
+  {
+    "objectID": "day1/index.html#workfile",
+    "href": "day1/index.html#workfile",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "",
+    "text": "The demo html file is available here in the github repo.\nYou can view the slides below or open them in a new tab."
+  }
+]

@@ -1,0 +1,63 @@
+meta:
+  name:
+    short: MyBrand
+    full: MyBrand International
+  link:
+    home: https://www.mybrand.com
+    linkedin: https://www.linkedin.com/company/mybrand
+    github: https://github.com/mybrand
+    twitter: https://twitter.com/mybrand
+
+
+
+color:
+  palette:
+    white: "#FFFFFF"
+    black: "#222222"
+    pastel-blue: "#A7C7E7"
+    pastel-green: "#A8E6CF"
+    pastel-yellow: "#FFF9B1"
+    pastel-pink: "#FFB6C1"
+    pastel-purple: "#D8BFD8"
+    soft-gray: "#E0E0E0"
+
+  foreground: black
+  background: white
+  primary: pastel-blue
+  secondary: pastel-green
+  tertiary: pastel-yellow
+  success: pastel-green
+  info: pastel-purple
+  warning: pastel-yellow
+  danger: pastel-pink
+  light: white
+  dark: soft-gray
+
+typography:
+  fonts:
+    - family: Roboto
+      source: google
+      weight: [400, 700]
+      style: [normal, italic]
+    - family: Open Sans
+      source: google
+      weight: [400, 600]
+      style: [normal, italic]
+
+  base:
+    family: Roboto
+    weight: 400
+    size: 16px
+    line-height: 1.5
+
+  headings:
+    family: Open Sans
+    weight: 600
+    line-height: 1.2
+    color: black
+
+  monospace:
+    family: Fira Code
+    weight: 400
+    size: 14px
+    color: pastel-purple

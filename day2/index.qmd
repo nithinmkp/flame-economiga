@@ -1,0 +1,21 @@
+---
+title: " Time Series Analysis: Methods for Real-World Forecasting"
+format:
+  html:
+    toc: false
+---
+
+
+
+You can view the slides below or **[open them in a new tab](slides.html){target=_blank}**.  
+ 
+
+<div style="position: relative; width: 100%; padding-top: 56.25%;">
+  <iframe 
+    src="slides.html?controls=true&progress=true&slideNumber=true&transition=fade" 
+    width="100%" 
+    height="100%" 
+    style="position: absolute; top: 0; left: 0; border: none;">
+  </iframe>
+</div>
+
