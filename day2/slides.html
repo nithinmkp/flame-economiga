@@ -6,15 +6,14 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fc8d3d93f0a84b7619e1f8ff6eb63d42.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Nithin M">
-  <meta name="author" content="Naveen Hari">
-  <title>ECONTRIX 2026 – What Grad Schools Don’t Teach You</title>
+  <title>ECONTRIX 2026 – Time Series Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,8 +31,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2e59eaa810b0c53ace5cf9a98f29c4cf.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-d2d77677eff0f210ed664acdd8b3b7b6.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -133,8 +198,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">What Grad Schools Don’t Teach You</h1>
-  <p class="subtitle">Tools for Transparant and Reproducible Research</p>
+  <h1 class="title">Time Series Analysis</h1>
+  <p class="subtitle">Methods for Real-World Forecasting</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -142,23 +207,748 @@
 Nithin M 
 </div>
 </div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Naveen Hari 
+</div>
+
+  <p class="date">Jan 4, 2026</p>
+</section>
+<section id="introduction" class="slide level3">
+<h3>Introduction</h3>
+<ul>
+<li>What is time series?</li>
+<li>Examples of time series data</li>
+<li>Why study time series?</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>ordered collection of observations; usually equally spaced over time</li>
+<li>mainly to understand the data generating process, forecasting of future values</li>
+<li>special because of autocorrelation among two observations</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="components-of-time-series" class="slide level3 scrollable">
+<h3>Components of time series</h3>
+<p>A time series can be decomposed into 4 components</p>
+<ol type="1">
+<li>Trend
+<ul>
+<li>long pattern of the series</li>
+<li>positive or negative</li>
+</ul></li>
+<li>Seasonal
+<ul>
+<li>regular fluctuations in a specific frequency</li>
+</ul></li>
+<li>Cyclical
+<ul>
+<li>up- down movement over longer periods</li>
+<li>typical business cycles in macroeconomics</li>
+</ul></li>
+<li>Irregular
+<ul>
+<li>Unpredictable component</li>
+</ul></li>
+</ol>
+</section>
+<section id="working-with-r" class="slide level3">
+<h3>Working with R</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="do">## Data we use is the inbuilt "AirPassengers" data</span></span>
+<span id="cb1-2"><a></a><span class="fu">plot</span>(AirPassengers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Time series plot of air passengers data</p></section>
+<section id="working-with-r-1" class="slide level3">
+<h3>Working with R</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">plot</span>(<span class="fu">decompose</span>(AirPassengers))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Time series decomposition of air passengers data</p></section>
+<section id="stochastic-process" class="slide level3">
+<h3>Stochastic Process</h3>
+<ul>
+<li>a collection of time indexed random variables</li>
+<li>randomness</li>
+<li>time series is actually a realization from certain stochastic process</li>
+<li>stationary and non-stationary process</li>
+</ul>
+<aside class="notes">
+<ul>
+<li><span class="math inline">\(y(\omega,t)\)</span></li>
+<li>remeber the bell shape from edx</li>
+<li>cannot be accurately predicted</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="stationary-stochastic-process" class="slide level3">
+<h3>Stationary Stochastic Process</h3>
+<p>a discrete stochastic series is stationary if <span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;E\left(y_{t}\right)=\mu \\
+&amp;E\left(y_{t}-\mu\right)^{2}=\sigma^{2} \\
+&amp;E\left[\left(y_{t}-\mu\right)\left(y_{t+k}-\mu\right)\right]=r_{k}
+\end{aligned}
+\end{equation}\]</span></p>
+<aside class="notes">
+<ul>
+<li>mention strong form of stationarity</li>
+<li>join distribution is time invariant</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="white-noise-process" class="slide level3">
+<h3>White Noise Process</h3>
+<ul>
+<li>sequence of uncorrelated random variables from a fixed distribution</li>
+<li><em>i.i.d</em></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;E\left(y_{t}\right)=\mu=0 \\
+&amp;E\left(y_{t}-\mu\right)^{2}=Var(y_t)=\sigma_{\mu}^{2}
+\end{aligned}
+\end{equation}\]</span></p>
+</div>
+</section>
+<section id="simulation-of-stationary-process" class="slide level3 scrollable">
+<h3>Simulation of Stationary process</h3>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Basic Plot</a></li><li><a href="#tabset-1-2">XTS package</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># purely random process with mean 0 and standard deviation 1</span></span>
+<span id="cb3-2"><a></a>eps <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb3-3"><a></a>mu <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="co"># the constant mean</span></span>
+<span id="cb3-4"><a></a><span class="co"># The process</span></span>
+<span id="cb3-5"><a></a>x_t <span class="ot">&lt;-</span>mu<span class="sc">+</span> eps</span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a><span class="co">#Conversion to time series</span></span>
+<span id="cb3-8"><a></a>x_t_ts<span class="ot">&lt;-</span><span class="fu">ts</span>(x_t, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1990</span>,<span class="dv">1</span>),<span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb3-9"><a></a></span>
+<span id="cb3-10"><a></a>x_t_ts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Jan         Feb         Mar         Apr         May         Jun
+1990  4.03447985  2.75983198  2.25529338  1.55286060  2.60681527  2.42651412
+1991  1.38653867  3.39060815  2.59874029  2.82101562  1.79241664  2.56603923
+1992  1.78657761  2.21183187  2.40161838  2.12462775  2.83830786  0.24312165
+1993  3.19135620  4.02173820  2.26083796  2.88027181  1.27582320 -0.22035636
+1994  1.86231688  0.60827325  0.39131027  0.79445300  4.23098313  1.83986445
+1995  2.33962843 -0.29989938  0.88304362  2.05011126  2.83082192  4.08824658
+1996  2.30077854  0.99523112  0.46132363  0.39827265  2.79303169  1.98381774
+1997  2.81205966  2.82935344  1.35456413  1.96436534  1.75574467  0.96320894
+1998  1.26395088  1.77686863  0.94126494  2.15416043                        
+             Jul         Aug         Sep         Oct         Nov         Dec
+1990  0.83627183  0.74405990  1.34775912  2.17362248  1.62561517  2.77891044
+1991 -0.78458633  0.96316706  2.99362966  2.08970275  2.76447030  2.70196881
+1992  0.96324112  2.33016199  2.63366966  3.07738532  2.19063878  2.13066349
+1993  4.38719484  0.42470408  2.73095383  2.25943758  0.93318647  2.16427336
+1994  3.10942492  3.13903889  0.46872599  2.53973419  1.93695851  1.46046963
+1995  1.41029632  2.69840603  2.37610032  4.07835153  2.54875202  0.77411826
+1996  0.01178158  2.51614358  1.51984773  3.79276316  3.34767108  1.16943659
+1997  1.31076646  3.01907115  2.55465632  2.65231771  2.93088237  2.43838876
+1998                                                                        </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">plot</span>(x_t_ts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># purely random process with mean 0 and standard deviation 1</span></span>
+<span id="cb6-2"><a></a>eps <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb6-3"><a></a>mu <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="co"># the constant mean</span></span>
+<span id="cb6-4"><a></a><span class="co"># The process</span></span>
+<span id="cb6-5"><a></a>x_t <span class="ot">&lt;-</span>mu<span class="sc">+</span> eps</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a><span class="co">#Conversion to time series</span></span>
+<span id="cb6-8"><a></a><span class="fu">library</span>(xts)</span>
+<span id="cb6-9"><a></a>xt_xts<span class="ot">&lt;-</span><span class="fu">as.xts</span>(x_t_ts)</span>
+<span id="cb6-10"><a></a>xt_xts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                [,1]
+Jan 1990  4.03447985
+Feb 1990  2.75983198
+Mar 1990  2.25529338
+Apr 1990  1.55286060
+May 1990  2.60681527
+Jun 1990  2.42651412
+Jul 1990  0.83627183
+Aug 1990  0.74405990
+Sep 1990  1.34775912
+Oct 1990  2.17362248
+Nov 1990  1.62561517
+Dec 1990  2.77891044
+Jan 1991  1.38653867
+Feb 1991  3.39060815
+Mar 1991  2.59874029
+Apr 1991  2.82101562
+May 1991  1.79241664
+Jun 1991  2.56603923
+Jul 1991 -0.78458633
+Aug 1991  0.96316706
+Sep 1991  2.99362966
+Oct 1991  2.08970275
+Nov 1991  2.76447030
+Dec 1991  2.70196881
+Jan 1992  1.78657761
+Feb 1992  2.21183187
+Mar 1992  2.40161838
+Apr 1992  2.12462775
+May 1992  2.83830786
+Jun 1992  0.24312165
+Jul 1992  0.96324112
+Aug 1992  2.33016199
+Sep 1992  2.63366966
+Oct 1992  3.07738532
+Nov 1992  2.19063878
+Dec 1992  2.13066349
+Jan 1993  3.19135620
+Feb 1993  4.02173820
+Mar 1993  2.26083796
+Apr 1993  2.88027181
+May 1993  1.27582320
+Jun 1993 -0.22035636
+Jul 1993  4.38719484
+Aug 1993  0.42470408
+Sep 1993  2.73095383
+Oct 1993  2.25943758
+Nov 1993  0.93318647
+Dec 1993  2.16427336
+Jan 1994  1.86231688
+Feb 1994  0.60827325
+Mar 1994  0.39131027
+Apr 1994  0.79445300
+May 1994  4.23098313
+Jun 1994  1.83986445
+Jul 1994  3.10942492
+Aug 1994  3.13903889
+Sep 1994  0.46872599
+Oct 1994  2.53973419
+Nov 1994  1.93695851
+Dec 1994  1.46046963
+Jan 1995  2.33962843
+Feb 1995 -0.29989938
+Mar 1995  0.88304362
+Apr 1995  2.05011126
+May 1995  2.83082192
+Jun 1995  4.08824658
+Jul 1995  1.41029632
+Aug 1995  2.69840603
+Sep 1995  2.37610032
+Oct 1995  4.07835153
+Nov 1995  2.54875202
+Dec 1995  0.77411826
+Jan 1996  2.30077854
+Feb 1996  0.99523112
+Mar 1996  0.46132363
+Apr 1996  0.39827265
+May 1996  2.79303169
+Jun 1996  1.98381774
+Jul 1996  0.01178158
+Aug 1996  2.51614358
+Sep 1996  1.51984773
+Oct 1996  3.79276316
+Nov 1996  3.34767108
+Dec 1996  1.16943659
+Jan 1997  2.81205966
+Feb 1997  2.82935344
+Mar 1997  1.35456413
+Apr 1997  1.96436534
+May 1997  1.75574467
+Jun 1997  0.96320894
+Jul 1997  1.31076646
+Aug 1997  3.01907115
+Sep 1997  2.55465632
+Oct 1997  2.65231771
+Nov 1997  2.93088237
+Dec 1997  2.43838876
+Jan 1998  1.26395088
+Feb 1998  1.77686863
+Mar 1998  0.94126494
+Apr 1998  2.15416043</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">plot</span>(xt_xts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="white-noise-process-in-r" class="slide level3 scrollable">
+<h3>White noise process in R</h3>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Using base R</a></li><li><a href="#tabset-2-2">using stats package</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>),<span class="at">type=</span><span class="st">"l"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>white_noise<span class="ot">&lt;-</span> <span class="fu">arima.sim</span>(<span class="at">model =</span> <span class="fu">list</span>(<span class="at">order =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)), <span class="at">n =</span> <span class="dv">100</span>)</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a><span class="co"># Plot the WN observations</span></span>
+<span id="cb10-4"><a></a><span class="fu">ts.plot</span>(white_noise)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="autocorrelation-and-autocovariance-functions" class="slide level3">
+<h3>Autocorrelation and Autocovariance Functions</h3>
+<ul>
+<li><p>both as functions of only time differences <span class="math inline">\(|t-s|\)</span></p></li>
+<li><p>Autocovariance <span class="math display">\[\begin{equation}
+\gamma_{k}=\operatorname{Cov}\left(Z_{t}, Z_{t+k}\right)=E\left(Z_{t}-\mu\right)\left(Z_{t+k}-\mu\right)
+\end{equation}\]</span></p></li>
+<li><p>Autocorrelation Function (ACF) <span class="math display">\[\begin{equation}
+\rho_{k}=\frac{\operatorname{Cov}\left(Z_{t}, Z_{f+k}\right)}{\sqrt{\operatorname{Var}\left(Z_{f}\right)} \sqrt{\operatorname{Var}\left(Z_{t+k}\right)}}=\frac{\gamma_{k}}{\gamma_{0}}
+\end{equation}\]</span></p></li>
+</ul>
+</section>
+<section id="implementation-in-r" class="slide level3">
+<h3>Implementation in R</h3>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">ACF Table</a></li><li><a href="#tabset-3-2">ACF plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(forecast)</span>
+<span id="cb11-2"><a></a><span class="fu">ggAcf</span>(AirPassengers,<span class="at">lag.max =</span> <span class="dv">10</span>,<span class="at">plot =</span> F)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Autocorrelations of series 'AirPassengers', by lag
+
+    0     1     2     3     4     5     6     7     8     9    10 
+1.000 0.948 0.876 0.807 0.753 0.714 0.682 0.663 0.656 0.671 0.703 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggAcf</span>(co2,<span class="at">lag.max =</span> <span class="dv">10</span>,<span class="at">plot =</span> T)<span class="sc">+</span>ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="univariate-time-series" class="title-slide slide level2 center">
+<h2>Univariate Time Series</h2>
 
 </section>
-<section class="slide level2">
+<section id="stationary-time-series" class="slide level3 scrollable">
+<h3>Stationary Time Series</h3>
+<ul>
+<li><p>3 important process</p>
+<ol type="1">
+<li><p>Moving Average (MA) <span class="math display">\[
+y_{t}=\mu+u_{t}+\phi_{1} u_{t-1}+\phi_{2} u_{t-2}+\ldots+\phi_{t} u_{t}
+\]</span></p></li>
+<li><p>Autoregressive (AR) <span class="math display">\[
+y_{t}=a+b_{1} y_{t-1}+b_{2} y_{t-2}+\ldots .+b_{p} y_{t}+\varepsilon_{t}
+\]</span></p></li>
+<li><p>ARMA Process <span class="math display">\[
+\begin{aligned}
+&amp;y_{t}=a+b_{1}y_{t-1}+b_{2}y_{t-2}+\ldots+b_{p}y_{t-p} \\
+&amp;+u_{t}+\phi_{1} u_{t-1}+\phi_{2} u_{t-2}+\ldots+\phi_{q} u_{t-q}
+\end{aligned}
+\]</span></p></li>
+</ol></li>
+</ul>
+</section>
+<section id="steps-in-analysis-of-stationary-series" class="slide level3 scrollable">
+<h3>Steps in analysis of stationary series</h3>
+<ol type="1">
+<li>Identification
+<ul>
+<li>visual inspection</li>
+</ul></li>
+</ol>
+<div class="fragment">
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">AR(1) process</a></li><li><a href="#tabset-4-2">MA (1) process</a></li><li><a href="#tabset-4-3">ARMA process</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb14-2"><a></a>ts_AR <span class="ot">&lt;-</span> <span class="fu">arima.sim</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="fu">list</span>(<span class="at">ar =</span> <span class="fl">0.7</span>))</span>
+<span id="cb14-3"><a></a><span class="fu">plot</span>(ts_AR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb15-2"><a></a>ts_MA<span class="ot">&lt;-</span><span class="fu">arima.sim</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="fu">list</span>(<span class="at">ma =</span> <span class="fl">0.7</span>))</span>
+<span id="cb15-3"><a></a><span class="fu">plot</span>(ts_MA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb16-2"><a></a>ts_ARMA<span class="ot">&lt;-</span><span class="fu">arima.sim</span>(<span class="at">n =</span> <span class="dv">500</span>, <span class="fu">list</span>(<span class="at">ar=</span><span class="fl">0.5</span>,<span class="at">ma =</span> <span class="fl">0.3</span>))</span>
+<span id="cb16-3"><a></a><span class="fu">plot</span>(ts_ARMA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="formal-identification" class="slide level3 scrollable">
+<h3>Formal identification</h3>
+<h4 id="autocorrelation-function">Autocorrelation Function</h4>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">AR(1) process</a></li><li><a href="#tabset-5-2">MA(1) process</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggAcf</span>(ts_AR,<span class="at">lag.max=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggAcf</span>(ts_MA,<span class="at">lag.max=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="formal-identification-cont." class="slide level3 scrollable">
+<h3>Formal identification (Cont.)</h3>
+<h4 id="partial-autocorrelation-function">Partial Autocorrelation Function</h4>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">AR(1) process</a></li><li><a href="#tabset-6-2">MA(1) process</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggPacf</span>(ts_AR,<span class="at">lag.max=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggPacf</span>(ts_MA,<span class="at">lag.max=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>The <span class="math inline">\(p^{\text {th }}\)</span> partial autcorrelation is the <span class="math inline">\(p^{\text {th }}\)</span> coefficient of linear regression of <span class="math inline">\(y_{+}\)</span>on its lags up to <span class="math inline">\(p\)</span> :</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="formal-identification-cont.-1" class="slide level3">
+<h3>Formal identification (Cont.)</h3>
 
-
+<img data-src="sum_acf.png" class="r-stretch quarto-figure-center"><p class="caption">Summary of Patterns to look for</p></section>
+<section id="non-stationary-process" class="slide level3">
+<h3>Non-stationary Process</h3>
+<ul>
+<li>A variable <span class="math inline">\(y_t\)</span> is non-stationary, if it has time varying mean or <span style="color:red">time varying variance </span> or both<br>
+</li>
+<li>There is no mean reversion</li>
+<li>3 types
+<ol type="1">
+<li>Random Walk without drift</li>
+<li>Random walk with drift</li>
+<li>Random walk with drift and deterministic trend</li>
+</ol></li>
+</ul>
+</section>
+<section id="random-walk---simulation" class="slide level3 scrollable">
+<h3>Random walk - Simulation</h3>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">R</a></li><li><a href="#tabset-7-2">Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># Set-up</span></span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a>alphas<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>,<span class="fl">0.98</span>)</span>
+<span id="cb21-4"><a></a>obs<span class="ot">&lt;-</span><span class="fu">array</span>(<span class="dv">0</span>,<span class="dv">200</span>)</span>
+<span id="cb21-5"><a></a>list_rw<span class="ot">&lt;-</span><span class="fu">list</span>()</span>
+<span id="cb21-6"><a></a><span class="cf">for</span>(m <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb21-7"><a></a><span class="cf">for</span>(i <span class="cf">in</span> alphas){</span>
+<span id="cb21-8"><a></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">length</span>(obs) ){</span>
+<span id="cb21-9"><a></a>    obs[j]<span class="ot">=</span>i<span class="sc">*</span>obs[j<span class="dv">-1</span>]<span class="sc">+</span><span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb21-10"><a></a>  }</span>
+<span id="cb21-11"><a></a>}</span>
+<span id="cb21-12"><a></a>  list_rw[[m]]<span class="ot">&lt;-</span>obs</span>
+<span id="cb21-13"><a></a>  </span>
+<span id="cb21-14"><a></a>}</span>
+<span id="cb21-15"><a></a></span>
+<span id="cb21-16"><a></a></span>
+<span id="cb21-17"><a></a><span class="co">#limit calculation</span></span>
+<span id="cb21-18"><a></a>ymax<span class="ot">=</span><span class="fu">max</span>(<span class="fu">sapply</span>(list_rw,max))</span>
+<span id="cb21-19"><a></a>ymin<span class="ot">=</span><span class="fu">min</span>(<span class="fu">sapply</span>(list_rw,min))</span>
+<span id="cb21-20"><a></a></span>
+<span id="cb21-21"><a></a><span class="co">#empty plot</span></span>
+<span id="cb21-22"><a></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlab =</span> <span class="st">"index"</span>, <span class="at">ylab =</span> <span class="st">"value"</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">length</span>(obs)), <span class="at">ylim =</span> <span class="fu">c</span>(ymin,ymax))</span>
+<span id="cb21-23"><a></a></span>
+<span id="cb21-24"><a></a><span class="co">#plot lines</span></span>
+<span id="cb21-25"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(list_rw)){</span>
+<span id="cb21-26"><a></a>  <span class="fu">lines</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>,<span class="at">y=</span>list_rw[[i]], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> i <span class="sc">+</span><span class="dv">1</span> )</span>
+<span id="cb21-27"><a></a>}</span>
+<span id="cb21-28"><a></a></span>
+<span id="cb21-29"><a></a><span class="co"># Legends</span></span>
+<span id="cb21-30"><a></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">legend =</span> <span class="fu">paste0</span>(<span class="st">"alpha = "</span>, alphas), <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fu">seq_along</span>(alphas))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-7-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a>α<span class="op">=</span>[<span class="dv">0</span>,<span class="fl">0.8</span>,<span class="fl">0.98</span>]</span>
+<span id="cb22-5"><a></a>T <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb22-6"><a></a>x <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span>(T<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb22-7"><a></a>ϵ<span class="op">=</span>np.random.randn(T)</span>
+<span id="cb22-8"><a></a><span class="cf">for</span> j <span class="kw">in</span> α:</span>
+<span id="cb22-9"><a></a>    x[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-10"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(T):</span>
+<span id="cb22-11"><a></a>         x[i<span class="op">+</span><span class="dv">1</span>]<span class="op">=</span>j <span class="op">*</span>x[i]<span class="op">+</span>ϵ[i]</span>
+<span id="cb22-12"><a></a>    plt.plot(x, label<span class="op">=</span><span class="ss">f'$</span><span class="ch">\\</span><span class="ss">alpha = </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">$'</span>)</span>
+<span id="cb22-13"><a></a></span>
+<span id="cb22-14"><a></a>plt.legend()</span>
+<span id="cb22-15"><a></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="integrated-stochastic-process" class="slide level3">
+<h3>Integrated Stochastic Process</h3>
+<ul>
+<li><p>RWP is non-stationary but its first difference is stationary <span class="math display">\[\begin{equation}
+\begin{aligned}
+&amp;y_{t}=y_{t-1}+\varepsilon_{t} \\
+&amp;\Delta y_{t}=\varepsilon_{t}
+\end{aligned}
+\end{equation}\]</span></p></li>
+<li><p><span class="math inline">\(y_t\)</span> is said to be integrated of order 1 (<span class="math inline">\(y_{t} \sim I(1)\)</span>)</p></li>
+<li><p>simillarly, <span class="math inline">\(y_t \sim I(2)\)</span> if <span class="math inline">\(\Delta^{2} y_{t}=\varepsilon_{t}\)</span></p></li>
+</ul>
+<aside class="notes">
+<p>introduce lag operator</p>
+<p><span class="math inline">\(Ly_t= y_{t-1}\)</span></p>
+<p><span class="math display">\[
+y_{t}^{\prime}=y_{t}-y_{t-1}=y_{t}-L y_{t}=(1-L) y_{t}
+\]</span></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="consequences-of-non-stationarity" class="slide level3">
+<h3>Consequences of Non-Stationarity</h3>
+<ul>
+<li>Shocks do not “die” out</li>
+<li>Statistical consequences
+<ul>
+<li>Non normal distribution of test statistics</li>
+<li>Bias in AR coefficients</li>
+<li>Poor forecasts</li>
+<li><span style="color:red"><strong>Spurious Regression</strong> </span></li>
+</ul></li>
+</ul>
+</section>
+<section id="testing-for-non-stationarity" class="slide level3">
+<h3>Testing for Non-Stationarity</h3>
+<ul>
+<li>Unit root problem</li>
+<li>Conventional Unit root tests
+<ul>
+<li>DF test</li>
+<li>ADF test</li>
+<li>PP test</li>
+<li>DF GLS test</li>
+</ul></li>
+<li>Unit root with structural breaks</li>
+<li>KPSS stationarity test</li>
+</ul>
+<aside class="notes">
+<p>DF test, errors are white noise while in ADF we allow for autocorrelation in PP errors are ARMA - PP based on aymptotic properties</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="where-do-we-go-from-here" class="title-slide slide level2 center">
+<h2>Where do we go from here??</h2>
 
 </section>
+<section id="advanced-topics" class="slide level3">
+<h3>Advanced Topics</h3>
+<ul>
+<li>ARIMA models</li>
+<li>Modelling Volatility- ARCH/GARCH class of models</li>
+<li>Multivariate time series - VAR/VECM</li>
+<li>Non-linear time series - TAR/SETAR, MRS, KF</li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>https://nithinmkp.github.io/ysi-economiga/</p>
+<p>https://github.com/nithinmkp/flame-economiga</p>
 </div>
 </div></div>
 
@@ -372,6 +1162,82 @@ Naveen Hari
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -18,7 +18,7 @@
     "href": "day1/index.html",
     "title": "Unlocking the Web: Data Scraping Techniques",
     "section": "",
-    "text": "from bs4 import BeautifulSoup # pip install bs4\nimport requests # pip install requests\nimport re\nimport polars as pl # pip install polars\n\n\n\n\n\nlibrary(datapasta)  # install.packages(\"datapasta\")\nlibrary(rvest)      # install.packages(\"rvest\")\nlibrary(httr)      # install.packages(\"httr\")\nlibrary(dplyr)     # install.packassges(\"dplyr\")\nlibrary(stringr)   # install.packages(\"stringr\")\n\n\n\n\n\nVS Code or RStudio\n\n\n\n\nThe demo html file is available here in the github repo.\nYou can view the slides below or open them in a new tab."
+    "text": "from bs4 import BeautifulSoup # pip install bs4\nimport requests # pip install requests\nimport re\nimport polars as pl # pip install polars\n\n\n\n\n\nlibrary(datapasta)  # install.packages(\"datapasta\")\nlibrary(rvest)      # install.packages(\"rvest\")\nlibrary(httr)      # install.packages(\"httr\")\nlibrary(dplyr)     # install.packassges(\"dplyr\")\nlibrary(stringr)   # install.packages(\"stringr\")\n\n\n\n\n\nVS Code or RStudio\n\n\n\n\nThe demo html file is available in resources folder in the github repo.\n\n\n\nYou can view the slides below or open them in a new tab."
   },
   {
     "objectID": "day1/index.html#python",
@@ -46,7 +46,14 @@
     "href": "day1/index.html#workfile",
     "title": "Unlocking the Web: Data Scraping Techniques",
     "section": "",
-    "text": "The demo html file is available here in the github repo.\nYou can view the slides below or open them in a new tab."
+    "text": "The demo html file is available in resources folder in the github repo."
+  },
+  {
+    "objectID": "day1/index.html#slides",
+    "href": "day1/index.html#slides",
+    "title": "Unlocking the Web: Data Scraping Techniques",
+    "section": "",
+    "text": "You can view the slides below or open them in a new tab."
   },
   {
     "objectID": "day1/web_scrap.html#datapasta",
@@ -70,10 +77,17 @@
     "text": "Python - Beautiful Soup"
   },
   {
-    "objectID": "Slides/index.html",
-    "href": "Slides/index.html",
-    "title": "Slides",
-    "section": "",
-    "text": "You can view the slides below or open them in a new tab."
+    "objectID": "day2/slides.html#univariate-time-series",
+    "href": "day2/slides.html#univariate-time-series",
+    "title": "Time Series Analysis",
+    "section": "Univariate Time Series",
+    "text": "Univariate Time Series"
+  },
+  {
+    "objectID": "day2/slides.html#where-do-we-go-from-here",
+    "href": "day2/slides.html#where-do-we-go-from-here",
+    "title": "Time Series Analysis",
+    "section": "Where do we go from here??",
+    "text": "Where do we go from here??"
   }
 ]
