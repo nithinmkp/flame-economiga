@@ -360,26 +360,26 @@ Nithin M
 <span id="cb3-9"><a></a></span>
 <span id="cb3-10"><a></a>x_t_ts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            Jan        Feb        Mar        Apr        May        Jun
-1990  3.2345999  1.3346541  3.4723120  2.3744494  1.6525440  1.2635168
-1991  2.5792355  1.3183872  1.5711913  1.9290135  1.1315019  1.4968488
-1992  2.8986487  2.5777634  3.6536418  2.2799384  2.1320757  2.0198798
-1993  2.4031615  1.4814779  2.2135394  2.4837437  0.6449626  1.1271918
-1994  2.7788039  0.2387745  2.9689483  3.3550918 -0.7372783  1.2434869
-1995  2.1964621  2.6176800  4.0376727  1.1061555  0.9358887  2.2466650
-1996  1.0091899  1.3630740  0.9492085  2.5090687  2.9174192  2.5378997
-1997  1.6749925  1.0596712  2.4524284  3.2842468  2.0116064  1.4850363
-1998  4.7010243  3.1598581  2.6813194  1.4897477                      
-            Jul        Aug        Sep        Oct        Nov        Dec
-1990  1.7907489  3.2065052  2.2377376  3.5486304  1.6069374  1.5386111
-1991  0.1522986  1.8578954  1.3662233  2.7353453  2.0092015  1.7335015
-1992  0.4767304  0.9995993  2.3459114  1.0406376  2.1676899  1.0333131
-1993  0.4447605  0.8893141  1.2100419  3.8081444  1.9846095  2.1291915
-1994  0.7385115  1.8857931  1.6139640  0.7114237  2.8516025  1.8313018
-1995  1.5999705  1.5052512  1.5834643  1.2203925  2.4436807  1.0007728
-1996 -0.4066120  0.1649486  0.5112624  1.6933356  2.2123346 -0.8016030
-1997  3.1461995  0.6636826  0.5983557  3.7430592 -0.8767809  2.1909860
-1998                                                                  </code></pre>
+<pre><code>           Jan       Feb       Mar       Apr       May       Jun       Jul
+1990 2.8020683 2.9212619 1.5770886 1.9989418 2.7409393 0.3056378 0.1948141
+1991 0.9449564 1.3329852 2.4422355 3.7253519 2.7242018 1.6829168 2.2863954
+1992 2.7568201 0.8296221 2.6016036 2.0512058 2.3952448 1.7532820 2.4596890
+1993 1.9994651 1.6146232 0.8998874 1.6849335 2.0541027 1.5258560 0.3085585
+1994 0.3601174 1.6095626 2.9820113 2.3244252 0.5675891 1.4373680 1.4970988
+1995 2.6458915 1.1860944 3.3795775 3.3793787 2.2896724 3.9349686 1.8168275
+1996 1.7202123 2.2061306 2.1530900 0.4199460 1.6099486 1.0203606 2.2224175
+1997 0.9356408 3.1818449 2.2896916 2.9076898 2.4721116 2.7782292 2.0620099
+1998 1.3474332 1.9972262 1.7807013 2.1818773                              
+           Aug       Sep       Oct       Nov       Dec
+1990 2.7699693 1.9840060 1.9207495 3.1591849 3.0527548
+1991 1.7277774 1.7189432 3.5322217 1.9321485 2.1946392
+1992 0.6452703 1.9654789 3.0813508 2.3363887 1.4197945
+1993 1.1028343 0.3825236 0.8409247 1.0223992 1.6148691
+1994 2.4919466 1.1360051 2.1254101 0.5343036 1.7909002
+1995 1.6267527 3.5949415 2.2261651 3.0460791 4.6742249
+1996 2.5571245 1.2519367 2.1954782 2.3655836 1.0772995
+1997 0.4591330 2.1296115 1.2022569 1.1535417 2.6936724
+1998                                                  </code></pre>
 </div>
 </div>
 <div class="cell">
@@ -406,107 +406,107 @@ Nithin M
 <span id="cb6-9"><a></a>xt_xts<span class="ot">&lt;-</span><span class="fu">as.xts</span>(x_t_ts)</span>
 <span id="cb6-10"><a></a>xt_xts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               [,1]
-Jan 1990  3.2345999
-Feb 1990  1.3346541
-Mar 1990  3.4723120
-Apr 1990  2.3744494
-May 1990  1.6525440
-Jun 1990  1.2635168
-Jul 1990  1.7907489
-Aug 1990  3.2065052
-Sep 1990  2.2377376
-Oct 1990  3.5486304
-Nov 1990  1.6069374
-Dec 1990  1.5386111
-Jan 1991  2.5792355
-Feb 1991  1.3183872
-Mar 1991  1.5711913
-Apr 1991  1.9290135
-May 1991  1.1315019
-Jun 1991  1.4968488
-Jul 1991  0.1522986
-Aug 1991  1.8578954
-Sep 1991  1.3662233
-Oct 1991  2.7353453
-Nov 1991  2.0092015
-Dec 1991  1.7335015
-Jan 1992  2.8986487
-Feb 1992  2.5777634
-Mar 1992  3.6536418
-Apr 1992  2.2799384
-May 1992  2.1320757
-Jun 1992  2.0198798
-Jul 1992  0.4767304
-Aug 1992  0.9995993
-Sep 1992  2.3459114
-Oct 1992  1.0406376
-Nov 1992  2.1676899
-Dec 1992  1.0333131
-Jan 1993  2.4031615
-Feb 1993  1.4814779
-Mar 1993  2.2135394
-Apr 1993  2.4837437
-May 1993  0.6449626
-Jun 1993  1.1271918
-Jul 1993  0.4447605
-Aug 1993  0.8893141
-Sep 1993  1.2100419
-Oct 1993  3.8081444
-Nov 1993  1.9846095
-Dec 1993  2.1291915
-Jan 1994  2.7788039
-Feb 1994  0.2387745
-Mar 1994  2.9689483
-Apr 1994  3.3550918
-May 1994 -0.7372783
-Jun 1994  1.2434869
-Jul 1994  0.7385115
-Aug 1994  1.8857931
-Sep 1994  1.6139640
-Oct 1994  0.7114237
-Nov 1994  2.8516025
-Dec 1994  1.8313018
-Jan 1995  2.1964621
-Feb 1995  2.6176800
-Mar 1995  4.0376727
-Apr 1995  1.1061555
-May 1995  0.9358887
-Jun 1995  2.2466650
-Jul 1995  1.5999705
-Aug 1995  1.5052512
-Sep 1995  1.5834643
-Oct 1995  1.2203925
-Nov 1995  2.4436807
-Dec 1995  1.0007728
-Jan 1996  1.0091899
-Feb 1996  1.3630740
-Mar 1996  0.9492085
-Apr 1996  2.5090687
-May 1996  2.9174192
-Jun 1996  2.5378997
-Jul 1996 -0.4066120
-Aug 1996  0.1649486
-Sep 1996  0.5112624
-Oct 1996  1.6933356
-Nov 1996  2.2123346
-Dec 1996 -0.8016030
-Jan 1997  1.6749925
-Feb 1997  1.0596712
-Mar 1997  2.4524284
-Apr 1997  3.2842468
-May 1997  2.0116064
-Jun 1997  1.4850363
-Jul 1997  3.1461995
-Aug 1997  0.6636826
-Sep 1997  0.5983557
-Oct 1997  3.7430592
-Nov 1997 -0.8767809
-Dec 1997  2.1909860
-Jan 1998  4.7010243
-Feb 1998  3.1598581
-Mar 1998  2.6813194
-Apr 1998  1.4897477</code></pre>
+<pre><code>              [,1]
+Jan 1990 2.8020683
+Feb 1990 2.9212619
+Mar 1990 1.5770886
+Apr 1990 1.9989418
+May 1990 2.7409393
+Jun 1990 0.3056378
+Jul 1990 0.1948141
+Aug 1990 2.7699693
+Sep 1990 1.9840060
+Oct 1990 1.9207495
+Nov 1990 3.1591849
+Dec 1990 3.0527548
+Jan 1991 0.9449564
+Feb 1991 1.3329852
+Mar 1991 2.4422355
+Apr 1991 3.7253519
+May 1991 2.7242018
+Jun 1991 1.6829168
+Jul 1991 2.2863954
+Aug 1991 1.7277774
+Sep 1991 1.7189432
+Oct 1991 3.5322217
+Nov 1991 1.9321485
+Dec 1991 2.1946392
+Jan 1992 2.7568201
+Feb 1992 0.8296221
+Mar 1992 2.6016036
+Apr 1992 2.0512058
+May 1992 2.3952448
+Jun 1992 1.7532820
+Jul 1992 2.4596890
+Aug 1992 0.6452703
+Sep 1992 1.9654789
+Oct 1992 3.0813508
+Nov 1992 2.3363887
+Dec 1992 1.4197945
+Jan 1993 1.9994651
+Feb 1993 1.6146232
+Mar 1993 0.8998874
+Apr 1993 1.6849335
+May 1993 2.0541027
+Jun 1993 1.5258560
+Jul 1993 0.3085585
+Aug 1993 1.1028343
+Sep 1993 0.3825236
+Oct 1993 0.8409247
+Nov 1993 1.0223992
+Dec 1993 1.6148691
+Jan 1994 0.3601174
+Feb 1994 1.6095626
+Mar 1994 2.9820113
+Apr 1994 2.3244252
+May 1994 0.5675891
+Jun 1994 1.4373680
+Jul 1994 1.4970988
+Aug 1994 2.4919466
+Sep 1994 1.1360051
+Oct 1994 2.1254101
+Nov 1994 0.5343036
+Dec 1994 1.7909002
+Jan 1995 2.6458915
+Feb 1995 1.1860944
+Mar 1995 3.3795775
+Apr 1995 3.3793787
+May 1995 2.2896724
+Jun 1995 3.9349686
+Jul 1995 1.8168275
+Aug 1995 1.6267527
+Sep 1995 3.5949415
+Oct 1995 2.2261651
+Nov 1995 3.0460791
+Dec 1995 4.6742249
+Jan 1996 1.7202123
+Feb 1996 2.2061306
+Mar 1996 2.1530900
+Apr 1996 0.4199460
+May 1996 1.6099486
+Jun 1996 1.0203606
+Jul 1996 2.2224175
+Aug 1996 2.5571245
+Sep 1996 1.2519367
+Oct 1996 2.1954782
+Nov 1996 2.3655836
+Dec 1996 1.0772995
+Jan 1997 0.9356408
+Feb 1997 3.1818449
+Mar 1997 2.2896916
+Apr 1997 2.9076898
+May 1997 2.4721116
+Jun 1997 2.7782292
+Jul 1997 2.0620099
+Aug 1997 0.4591330
+Sep 1997 2.1296115
+Oct 1997 1.2022569
+Nov 1997 1.1535417
+Dec 1997 2.6936724
+Jan 1998 1.3474332
+Feb 1998 1.9972262
+Mar 1998 1.7807013
+Apr 1998 2.1818773</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -942,9 +942,202 @@ y_{t}^{\prime}=y_{t}-y_{t-1}=y_{t}-L y_{t}=(1-L) y_{t}
 <li>Multivariate time series - VAR/VECM</li>
 <li>Non-linear time series - TAR/SETAR, MRS, KF</li>
 </ul>
-
-
 </section></section>
+<section>
+<section id="practical-time-series-in-r" class="title-slide slide level1 center">
+<h1>Practical Time Series in R</h1>
+
+</section>
+<section id="loading-data" class="slide level3 scrollable">
+<h3>Loading Data</h3>
+<ul>
+<li>a <code>R</code> dataframe is not a time series object by defauls</li>
+<li>need packages like <code>xts</code>, <code>zoo</code>, <code>tsibble</code> etc., to handle time series data</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 2
+   date       value
+   &lt;date&gt;     &lt;int&gt;
+ 1 2020-01-01  3821
+ 2 2020-02-01  3262
+ 3 2020-03-01  3219
+ 4 2020-04-01  4039
+ 5 2020-05-01  3004
+ 6 2020-06-01  3151
+ 7 2020-07-01  4903
+ 8 2020-08-01  3695
+ 9 2020-09-01  4138
+10 2020-10-01  3681
+11 2020-11-01  4568
+12 2020-12-01  3115</code></pre>
+</div>
+</div>
+<ul>
+<li>observe the date column; not a time series object yet</li>
+<li>this is just a regular dataframe with a date column</li>
+</ul>
+</section>
+<section id="converting-to-time-series-object" class="slide level3 scrollable">
+<h3>Converting to time series object</h3>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Default <code>tsibble</code> conversion</a></li><li><a href="#tabset-8-2">adjusting frequency</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">library</span>(tsibble)</span>
+<span id="cb24-2"><a></a>ts_data <span class="ot">&lt;-</span> table <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">as_tsibble</span>(<span class="at">index =</span> date)</span>
+<span id="cb24-4"><a></a><span class="fu">print</span>(ts_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tsibble: 12 x 2 [1D]
+   date       value
+   &lt;date&gt;     &lt;int&gt;
+ 1 2020-01-01  3821
+ 2 2020-02-01  3262
+ 3 2020-03-01  3219
+ 4 2020-04-01  4039
+ 5 2020-05-01  3004
+ 6 2020-06-01  3151
+ 7 2020-07-01  4903
+ 8 2020-08-01  3695
+ 9 2020-09-01  4138
+10 2020-10-01  3681
+11 2020-11-01  4568
+12 2020-12-01  3115</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-8-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb26-2"><a></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb26-3"><a></a>ts_data <span class="ot">&lt;-</span> table <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">yearmonth</span>(date)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a></a>  <span class="fu">as_tsibble</span>(<span class="at">index =</span> date)</span>
+<span id="cb26-6"><a></a><span class="fu">print</span>(ts_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tsibble: 12 x 2 [1M]
+       date value
+      &lt;mth&gt; &lt;int&gt;
+ 1 2020 Jan  3821
+ 2 2020 Feb  3262
+ 3 2020 Mar  3219
+ 4 2020 Apr  4039
+ 5 2020 May  3004
+ 6 2020 Jun  3151
+ 7 2020 Jul  4903
+ 8 2020 Aug  3695
+ 9 2020 Sep  4138
+10 2020 Oct  3681
+11 2020 Nov  4568
+12 2020 Dec  3115</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="some-data" class="title-slide slide level2 center">
+<h2>Some Data</h2>
+
+</section>
+<section id="section" class="slide level3">
+<h3></h3>
+<p>Load the data <code>gh_data.csv</code> - some cleaning - pivoting and making tidy data - converting to tsibble - gaps in data</p>
+</section>
+<section id="section-1" class="slide level3">
+<h3></h3>
+<p>Now load the <code>sales.csv</code></p>
+<ul>
+<li>handling gaps in the data</li>
+</ul>
+</section>
+<section id="working-dates-and-time" class="slide level3 scrollable">
+<h3>Working Dates and Time</h3>
+<ul>
+<li>conversion of date-time formats</li>
+<li>date arithmetic</li>
+<li><code>parse_date_time</code> from <code>lubridate</code> package</li>
+</ul>
+</section>
+<section id="time-series-features" class="slide level3">
+<h3>Time series features</h3>
+<ul>
+<li>calender features</li>
+<li>lagged features</li>
+<li>differenced features</li>
+<li>visualisation</li>
+</ul>
+</section>
+</section>
+<section>
+<section id="exploratory-time-series-analysis" class="title-slide slide level1 center">
+<h1>Exploratory Time Series Analysis</h1>
+
+</section>
+<section id="why-exploratory-analysis-matters" class="slide level3">
+<h3>Why Exploratory Analysis Matters</h3>
+<ul>
+<li><p>Pattern Discovery: Uncover seasonal patterns, trends, and cycles that drive your time series.</p></li>
+<li><p>Anomaly Detection: Identify outliers and unusual events that might distort your model.</p></li>
+<li><p>Model Selection: Understand the type of forecasting method that might work best for your data.</p></li>
+<li><p>Business Insights: For financial time series data you can transform raw numbers into actionable intelligence.</p></li>
+<li><p>Data Quality: Catch any data issues before they compromise your analysis.</p></li>
+</ul>
+</section>
+<section id="visual-exploration" class="slide level3 scrollable">
+<h3>Visual Exploration</h3>
+<ul>
+<li><code>ggplot2</code> package for visualisation</li>
+<li><code>autoplot</code> function from <code>feasts</code> package</li>
+</ul>
+</section>
+<section id="exploring-patterns" class="slide level3">
+<h3>Exploring Patterns</h3>
+<ul>
+<li>Trend analysis</li>
+<li>Seasonal patterns</li>
+<li>Cyclical patterns</li>
+<li>Irregular components</li>
+<li>AR, MA, ACF, PACF plots</li>
+</ul>
+</section></section>
+<section>
+<section id="forecasting" class="title-slide slide level1 center">
+<h1>Forecasting</h1>
+
+</section>
+<section id="forecasting-methods" class="slide level3">
+<h3>Forecasting Methods</h3>
+<p>use of <code>fable</code> package for forecasting</p>
+<ul>
+<li>Naive Forecasting</li>
+<li>Mean Forecasting</li>
+<li>Seasonal Naive Forecasting</li>
+<li>ETS</li>
+<li>ARIMA</li>
+<li>SARIMA</li>
+</ul>
+</section></section>
+<section>
+<section id="putting-it-all-together" class="title-slide slide level1 center">
+<h1>Putting it all together</h1>
+
+</section>
+<section id="section-2" class="slide level3">
+<h3></h3>
+<ul>
+<li>load `gh_cocoa.csv’ data</li>
+<li>fit some models</li>
+</ul>
+<p>Let us have fun with time series!!</p>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank You!</h1>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Prerequisites",
     "section": "",
-    "text": "Prerequisites\n\nIntro to R or Python programming\n\n\n\nIntsructor\nNithin M\nAssistant Professor, Department of Development Economics\nKerala Agricultural University\n\n\nSessions\n\n\nUnlocking the Web: Data Scraping Techniques\n\n\nTime Series Analysis: Methods for Real-World Forecasting\n\n\n\n\nMaterials\nCheck out this GitHub repo"
+    "text": "Prerequisites\n\nIntro to R or Python programming\n\n\n\nInstructor\nNithin M\nAssistant Professor, Department of Development Economics\nKerala Agricultural University\n\n\nSessions\n\n\nUnlocking the Web: Data Scraping Techniques\n\n\nTime Series Analysis: Methods for Real-World Forecasting\n\n\n\n\nMaterials\nCheck out this GitHub repo"
   },
   {
     "objectID": "day2/index.html",
@@ -89,5 +89,12 @@
     "title": "Time Series Analysis",
     "section": "Where do we go from here??",
     "text": "Where do we go from here??"
+  },
+  {
+    "objectID": "day2/slides.html#some-data",
+    "href": "day2/slides.html#some-data",
+    "title": "Time Series Analysis",
+    "section": "Some Data",
+    "text": "Some Data"
   }
 ]
