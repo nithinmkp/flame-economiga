@@ -6,7 +6,12 @@ format:
 ---
 
 
+# Prerequisites
+ - working installation of Python or R
+ - IDE: VS Code or RStudio
+ - Basic understanding of time series concepts
 
+# Slides
 You can view the slides below or **[open them in a new tab](slides.html){target=_blank}**.  
  
 
