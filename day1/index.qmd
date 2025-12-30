@@ -32,8 +32,9 @@ library(stringr)   # install.packages("stringr")
 -  VS Code or RStudio
 
 ## Workfile
-The demo html file is available [here](resources/demo_page.html) in the github repo.
+The demo html file is available in [resources folder](https://github.com/nithinmkp/flame-economiga/tree/main/resources) in the github repo.
 
+## Slides
 
 You can view the slides below or **[open them in a new tab](web_scrap.html){target=_blank}**.  
  

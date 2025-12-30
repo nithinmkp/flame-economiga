@@ -18,7 +18,7 @@ format:
     slide-level: 3
 fontsize: 20px
 highlight-style: github
-footer: " https://nithinmkp.github.io/ysi-economiga/"
+footer: "https://github.com/nithinmkp/flame-economiga"
 ---
 
 ### The Problem {.scrollable}

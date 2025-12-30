@@ -1,19 +1,463 @@
 ---
-title: "What Grad Schools Don’t Teach You"
-subtitle: Tools for Transparant and Reproducible Research
+title: Time Series Analysis
+subtitle: Methods for Real-World Forecasting
 author: 
   - name: Nithin M
     institute: Kerala agricultural University   
-  - name : Naveen Hari
+date: "2026-01-04"
+date-format: "medium"
 format:
   metropolis-revealjs:
     theme: [styles.scss]
-    slide-number: true
+    slide-number: c/t
     chalkboard: true
-    highlight-style: dracula
+    highlight-style: github
     multiplex: false
     preview-links: true
     controls: true
-    footer: " https://nithinmkp.github.io/ysi-economiga/"
+    footer: "https://github.com/nithinmkp/flame-economiga"
+    slide-level: 3
 brand: false
 ---
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+
+library(reticulate)
+use_virtualenv(here::here(".venv"))
+```
+### Introduction
+- What is time series?
+- Examples of time series data
+- Why study time series?
+
+
+::: {.notes}
+- ordered collection of observations; usually equally spaced over time
+- mainly to understand the data generating process, forecasting of future values 
+- special because of autocorrelation among two observations
+
+:::
+
+
+### Components of time series {.scrollable}
+
+A time series can be decomposed into 4 components
+
+1. Trend
+   - long pattern of the series
+   - positive or negative
+1. Seasonal 
+   - regular fluctuations in a specific frequency
+1. Cyclical 
+   - up- down movement over longer periods
+   - typical business cycles in macroeconomics
+1. Irregular 
+   - Unpredictable component 
+   
+### Working with R
+
+```{r}
+#| echo: true
+#| fig.cap: Time series plot of air passengers data
+## Data we use is the inbuilt "AirPassengers" data
+plot(AirPassengers)
+```
+
+### Working with R
+```{r}
+#| echo: true
+#| fig.cap: Time series decomposition of air passengers data
+plot(decompose(AirPassengers))
+```
+
+### Stochastic Process
+- a collection of time indexed random variables
+- randomness 
+- time series is actually a realization from certain stochastic process
+- stationary and non-stationary process
+
+
+::: {.notes}
+- $y(\omega,t)$
+- remeber the bell shape from edx
+- cannot be accurately predicted
+:::
+
+### Stationary Stochastic Process
+a discrete stochastic series is stationary if 
+\begin{equation}
+\begin{aligned}
+&E\left(y_{t}\right)=\mu \\
+&E\left(y_{t}-\mu\right)^{2}=\sigma^{2} \\
+&E\left[\left(y_{t}-\mu\right)\left(y_{t+k}-\mu\right)\right]=r_{k}
+\end{aligned}
+\end{equation}
+
+::: {.notes}
+- mention strong form of stationarity
+- join distribution is time invariant
+
+:::
+
+### White Noise Process
+- sequence of uncorrelated random variables from a fixed distribution
+- *i.i.d*
+
+. . .
+
+::: {.incremental}
+\begin{equation}
+\begin{aligned}
+&E\left(y_{t}\right)=\mu=0 \\
+&E\left(y_{t}-\mu\right)^{2}=Var(y_t)=\sigma_{\mu}^{2}
+\end{aligned}
+\end{equation}
+:::
+
+### Simulation of Stationary process {.scrollable}
+
+::: {.panel-tabset}
+
+### Basic Plot
+
+```{r}
+#| echo: true
+# purely random process with mean 0 and standard deviation 1
+eps <- rnorm(100, mean = 0, sd = 1)
+mu <- 2 # the constant mean
+# The process
+x_t <-mu+ eps
+
+#Conversion to time series
+x_t_ts<-ts(x_t, start = c(1990,1),frequency = 12)
+
+x_t_ts
+  
+```
+
+```{r}
+#| echo: true
+plot(x_t_ts)
+```
+
+
+### XTS package
+
+```{r}
+#| echo: true
+# purely random process with mean 0 and standard deviation 1
+eps <- rnorm(100, mean = 0, sd = 1)
+mu <- 2 # the constant mean
+# The process
+x_t <-mu+ eps
+
+#Conversion to time series
+library(xts)
+xt_xts<-as.xts(x_t_ts)
+xt_xts
+
+```
+```{r}
+#| echo: true
+plot(xt_xts)
+  
+```
+
+:::
+
+### White noise process in R {.scrollable}
+::: {.panel-tabset}
+### Using base R
+```{r}
+#| echo: true
+
+plot(rnorm(100),type="l")
+
+```
+
+### using stats package
+```{r}
+#| echo: true
+
+white_noise<- arima.sim(model = list(order = c(0, 0, 0)), n = 100)
+
+# Plot the WN observations
+ts.plot(white_noise)
+
+
+```
+:::
+
+
+### Autocorrelation and Autocovariance Functions 
+- both as functions of only time differences $|t-s|$
+- Autocovariance
+\begin{equation}
+\gamma_{k}=\operatorname{Cov}\left(Z_{t}, Z_{t+k}\right)=E\left(Z_{t}-\mu\right)\left(Z_{t+k}-\mu\right)
+\end{equation}
+
+- Autocorrelation Function (ACF)
+\begin{equation}
+\rho_{k}=\frac{\operatorname{Cov}\left(Z_{t}, Z_{f+k}\right)}{\sqrt{\operatorname{Var}\left(Z_{f}\right)} \sqrt{\operatorname{Var}\left(Z_{t+k}\right)}}=\frac{\gamma_{k}}{\gamma_{0}}
+\end{equation}
+
+### Implementation in R
+::: {.panel-tabset}
+
+### ACF Table
+```{r}
+#| echo: true
+#| message: false
+library(forecast)
+ggAcf(AirPassengers,lag.max = 10,plot = F)
+
+```
+
+### ACF plot
+```{r}
+#| echo: true
+#| message: false
+
+ggAcf(co2,lag.max = 10,plot = T)+ggplot2::theme_bw()
+```
+
+:::
+
+
+
+## Univariate Time Series
+### Stationary Time Series {.scrollable}
+- 3 important process
+
+  1. Moving Average (MA)
+  $$
+  y_{t}=\mu+u_{t}+\phi_{1} u_{t-1}+\phi_{2} u_{t-2}+\ldots+\phi_{t} u_{t}
+  $$
+  
+  1. Autoregressive (AR)
+  $$
+  y_{t}=a+b_{1} y_{t-1}+b_{2} y_{t-2}+\ldots .+b_{p} y_{t}+\varepsilon_{t}
+  $$
+  
+  1. ARMA Process
+  $$
+  \begin{aligned}
+  &y_{t}=a+b_{1}y_{t-1}+b_{2}y_{t-2}+\ldots+b_{p}y_{t-p} \\
+  &+u_{t}+\phi_{1} u_{t-1}+\phi_{2} u_{t-2}+\ldots+\phi_{q} u_{t-q}
+  \end{aligned}
+  $$
+
+### Steps in analysis of stationary series {.scrollable}
+1. Identification
+   - visual inspection
+
+. . .
+
+::: {.panel-tabset}
+
+### AR(1) process
+
+```{r}
+#| echo: true
+set.seed(123)
+ts_AR <- arima.sim(n = 500, list(ar = 0.7))
+plot(ts_AR)
+```
+
+### MA (1) process
+```{r}
+#| echo: true
+set.seed(123)
+ts_MA<-arima.sim(n = 500, list(ma = 0.7))
+plot(ts_MA)
+```
+
+### ARMA process
+```{r}
+#| echo: true
+set.seed(123)
+ts_ARMA<-arima.sim(n = 500, list(ar=0.5,ma = 0.3))
+plot(ts_ARMA)
+```
+:::
+
+### Formal identification {.scrollable}
+
+#### Autocorrelation Function
+
+::: {.panel-tabset}
+
+### AR(1) process
+
+```{r}
+#| echo: true
+ggAcf(ts_AR,lag.max=10)
+```
+### MA(1) process
+
+```{r}
+#| echo: true
+ggAcf(ts_MA,lag.max=10)
+```
+
+:::
+
+### Formal identification (Cont.) {.scrollable}
+
+#### Partial Autocorrelation Function
+
+::: {.panel-tabset}
+
+### AR(1) process
+
+```{r}
+#| echo: true
+ggPacf(ts_AR,lag.max=10)
+```
+### MA(1) process
+
+```{r}
+#| echo: true
+ggPacf(ts_MA,lag.max=10)
+```
+
+:::
+
+::: {.notes}
+The $p^{\text {th }}$ partial autcorrelation is the $p^{\text {th }}$ coefficient of linear regression of $y_{+}$on its lags up to $p$ :
+:::
+### Formal identification (Cont.)
+![Summary of Patterns to look for](sum_acf.png)
+
+
+### Non-stationary Process
+- A variable $y_t$ is non-stationary, if it has time varying mean or <span style="color:red">time varying variance </span> or both  
+- There is no mean reversion
+- 3 types
+  1. Random Walk without drift
+  1. Random walk with drift
+  1. Random walk with drift and deterministic trend
+
+### Random walk - Simulation {.scrollable}
+::: {.panel-tabset}
+
+### R
+```{r}
+#| echo: true
+#| message: false
+
+# Set-up
+
+alphas<-c(0,0.8,0.98)
+obs<-array(0,200)
+list_rw<-list()
+for(m in 1:3){
+for(i in alphas){
+  for (j in 2:length(obs) ){
+    obs[j]=i*obs[j-1]+rnorm(1)
+  }
+}
+  list_rw[[m]]<-obs
+  
+}
+
+
+#limit calculation
+ymax=max(sapply(list_rw,max))
+ymin=min(sapply(list_rw,min))
+
+#empty plot
+plot(NULL, xlab = "index", ylab = "value", xlim = c(0, length(obs)), ylim = c(ymin,ymax))
+
+#plot lines
+for(i in seq_along(list_rw)){
+  lines(x=1:200,y=list_rw[[i]], type = "l", lty = 1, col = i +1 )
+}
+
+# Legends
+legend("bottomright", legend = paste0("alpha = ", alphas), lty = 1, col = 1 + seq_along(alphas))
+
+```
+
+### Python
+```{python}
+#| echo: true
+#| message: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+α=[0,0.8,0.98]
+T = 200
+x = [0]*(T+1)
+ϵ=np.random.randn(T)
+for j in α:
+    x[0] = 0
+    for i in range(T):
+         x[i+1]=j *x[i]+ϵ[i]
+    plt.plot(x, label=f'$\\alpha = {j}$')
+
+plt.legend()
+plt.show()
+```
+
+:::
+
+### Integrated Stochastic Process
+- RWP is non-stationary but its first difference is stationary
+\begin{equation}
+\begin{aligned}
+&y_{t}=y_{t-1}+\varepsilon_{t} \\
+&\Delta y_{t}=\varepsilon_{t}
+\end{aligned}
+\end{equation}
+
+- $y_t$ is said to be integrated of order 1 ($y_{t} \sim I(1)$)
+-  simillarly,  $y_t \sim I(2)$ if $\Delta^{2} y_{t}=\varepsilon_{t}$
+
+::: {.notes}
+introduce lag operator
+
+$Ly_t= y_{t-1}$
+
+$$
+y_{t}^{\prime}=y_{t}-y_{t-1}=y_{t}-L y_{t}=(1-L) y_{t}
+$$
+:::
+
+### Consequences of Non-Stationarity
+- Shocks do not "die" out
+- Statistical consequences
+  - Non normal distribution of test statistics
+  - Bias in AR coefficients 
+  - Poor forecasts
+  - <span style="color:red">**Spurious Regression** </span>
+  
+### Testing for Non-Stationarity
+
+- Unit root problem
+- Conventional Unit root tests
+  - DF test
+  - ADF test
+  - PP test
+  - DF GLS test
+- Unit root with structural breaks
+- KPSS stationarity test
+
+::: {.notes}
+DF test, errors are white noise while in ADF we allow for autocorrelation
+in PP errors are ARMA
+- PP based on aymptotic properties
+
+
+:::
+
+## Where do we go from here??
+
+### Advanced Topics
+- ARIMA models
+- Modelling Volatility-  ARCH/GARCH class of models
+- Multivariate time series - VAR/VECM
+- Non-linear time series - TAR/SETAR, MRS, KF

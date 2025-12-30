@@ -6,7 +6,7 @@
 - Intro to R or Python programming
 
 # Intsructor
-[Nithin M](https://github.com/nithinmkp) 
+[Nithin M](https://nithinmkp.github.io/) 
 
 Assistant Professor, Department of Development Economics
 
@@ -20,4 +20,6 @@ Kerala Agricultural University
 
 # Materials
 
-[Check out this GitHub repo]()
+[Check out this GitHub repo](https://github.com/nithinmkp/flame-economiga)
+
+![](assets/qrcode-repo.svg)
