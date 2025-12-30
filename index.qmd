@@ -5,7 +5,7 @@
 # Prerequisites
 - Intro to R or Python programming
 
-# Intsructor
+# Instructor
 [Nithin M](https://nithinmkp.github.io/) 
 
 Assistant Professor, Department of Development Economics

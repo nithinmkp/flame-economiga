@@ -461,3 +461,116 @@ in PP errors are ARMA
 - Modelling Volatility-  ARCH/GARCH class of models
 - Multivariate time series - VAR/VECM
 - Non-linear time series - TAR/SETAR, MRS, KF
+
+# Practical Time Series in R
+
+### Loading Data {.scrollable}
+- a `R` dataframe is not a time series object by defauls
+- need packages like `xts`, `zoo`, `tsibble` etc., to handle time series data
+
+```{r}
+table <- tibble::tibble(
+  date = seq(as.Date("2020-01-01"), by = "month", length.out = 12),
+  value = sample(3000:5000, 12)
+)
+
+print(table)
+```
+- observe the date column; not a time series object yet
+- this is just a regular dataframe with a date column
+
+### Converting to time series object {.scrollable}
+::: {.panel-tabset}
+### Default `tsibble` conversion
+```{r}
+#| echo: true
+library(tsibble)
+ts_data <- table %>%
+  as_tsibble(index = date)
+print(ts_data)
+```
+### adjusting frequency
+```{r}
+#| echo: true
+library(dplyr)
+library(lubridate)
+ts_data <- table %>%
+  mutate(date = yearmonth(date)) %>%
+  as_tsibble(index = date)
+print(ts_data)
+```
+:::
+
+## Some Data
+
+### 
+Load the data `gh_data.csv` 
+- some cleaning
+  - pivoting and making tidy data
+  - converting to tsibble
+  - gaps in data
+
+
+### 
+Now load the `sales.csv` 
+
+- handling gaps in the data
+
+### Working Dates and Time {.scrollable}
+- conversion of date-time formats
+- date arithmetic
+- `parse_date_time` from `lubridate` package
+
+### Time series features
+
+- calender features
+- lagged features
+- differenced features
+- visualisation
+
+# Exploratory Time Series Analysis
+
+### Why Exploratory Analysis Matters
+
+
+- Pattern Discovery: Uncover seasonal patterns, trends, and cycles that drive your time series.
+
+- Anomaly Detection: Identify outliers and unusual events that might distort your model.
+- Model Selection: Understand the type of forecasting method that might work best for     your data.
+
+- Business Insights: For financial time series data you can transform raw numbers into actionable intelligence.
+- Data Quality: Catch any data issues before they compromise your analysis.
+
+### Visual Exploration {.scrollable}
+- `ggplot2` package for visualisation
+- `autoplot` function from `feasts` package
+
+### Exploring Patterns
+- Trend analysis
+- Seasonal patterns
+- Cyclical patterns
+- Irregular components
+- AR, MA, ACF, PACF plots
+
+# Forecasting
+
+### Forecasting Methods
+use of `fable` package for forecasting
+
+- Naive Forecasting
+- Mean Forecasting
+- Seasonal Naive Forecasting
+- ETS
+- ARIMA
+- SARIMA
+
+# Putting it all together
+
+###
+- load `gh_cocoa.csv' data
+- fit some models
+
+Let us have fun with time series!!
+
+# Thank You!
+
