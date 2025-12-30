@@ -11,7 +11,7 @@
     "href": "day2/index.html",
     "title": "Time Series Analysis: Methods for Real-World Forecasting",
     "section": "",
-    "text": "You can view the slides below or open them in a new tab."
+    "text": "Prerequisites\n\nworking installation of Python or R\nIDE: VS Code or RStudio\nBasic understanding of time series concepts\n\n\n\nSlides\nYou can view the slides below or open them in a new tab."
   },
   {
     "objectID": "day1/index.html",
